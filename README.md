@@ -1,6 +1,15 @@
 # Assignment
-Running the tests
+ToBuild
 
+1)Open Command line
+
+2)Navigate to the pom.xml path of the project
+
+3)Enter "mvn clean"
+
+4)Enter "mvn install"
+
+Running the tests
 1)Open the project in any IDE and navigate to the path src\main\java\runner
 
 2)Right click the file RunnerTest.java and select Run as junit test
@@ -15,12 +24,16 @@ FeatureFilesPath
 
 src\test\java\features
 
-ToBuild
+If any build failures run the following from terminal or command prompt
 
-1)Open Command line
+Remove all your failed downloads:
 
-2)Navigate to the pom.xml path of the project
+For Mac:
 
-3)Enter "mvn clean"
+find ~/.m2  -name "*.lastUpdated" -exec grep -q "Could not transfer" {} \; -print -exec rm {} \;
 
-4)Enter "mvn install"
+For Windows: 
+
+cd %userprofile%\.m2\repository
+for /r %i in (*.lastUpdated) do del %i
+Then rightclick on your project in eclipse and choose Maven->"Update Project ...", make sure "Update Dependencies" is checked in the resulting dialog and click OK.
